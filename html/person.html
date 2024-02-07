@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .scroll::-webkit-scrollbar{
+            display:none;
+        } */ 
+    </style>
+</head>
+<body>
+    <form method="get" action=""> <!--method ="get" 방식이 default-->
+     <table border="1" cellpadding="5" cellspacing="0" width ="400">
+        <tr>
+           <th width="70" >이름</th>
+                <td>
+                    <input type="text" name="name" id="user_name" placeholder="이름입력">
+                </td>
+        </tr>
+
+        <tr>
+            <th>성별</th>
+            <td>
+                <label><input type="radio" name="gender" value="0"checked>남자 </label>
+                <label><input type="radio" name="gender" value="1">여자</label>
+                
+            </td>
+            
+        </tr>
+    
+        <tr>
+            <th>색깔</th>
+            <td>
+            <select name="color"  style="width: 100px;">
+                <optgroup label="색깔">
+                    <option value="red">빨강</option>
+                    <option value="green">초록</option>
+                    <option value="blue">파랑</option>
+                    <option value="magenta">보라</option>
+                    <option value="skyblue">하늘</option>
+                </optgroup>
+            </select>
+              </td>
+             </tr>
+         <tr>
+                <th>취미</th>
+                <td>
+                    <label><input type="checkbox" name="hobby" value="독서">독서 </label>
+                    <label> <input type="checkbox" name="hobby" value="영화">영화</label>
+                    <label> <input type="checkbox" name="hobby" value="음악">음악</label>
+                    <label> <input type="checkbox" name="hobby" value="게임">게임</label>
+                    <label> <input type="checkbox" name="hobby" value="운동">운동</label>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>과목</th>
+                <td>
+                    <select class="scroll" name="subjecr" multiple size="6" style="width: 100px;">
+                        <option value="JAVA">JAVA</option>
+                        <option value="Servlet">Servlet</option>
+                        <option value="HTML" selected>HTML</option>
+                        <option value="Spring">Spring</option>
+                </td>
+            </tr>
+       
+    </form>
+</body>
+</html>

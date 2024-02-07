@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="result.html">
+        <fieldset>
+        <legend>이름입력하기</legend>
+        <div>
+            <label for="user_name">이름 : </label>
+            <input type="text" name="user_name" id="user_name"/>
+        </div>
+        <br/>
+        <div>
+            <input type="submit" value="입력완료"/>
+            <input type="reset" value="초기화"/>
+            <input type="button" onclick="javascript:location.href='result.html'" value="입력완료"/>
+            <input type="image" src="./image/ok.png" width="30" height="30" alt="OK"/>
+            <!-- 자동  submit-->
+            <input type="image" src="./image/ok.png" width="30" height="30" alt="OK"
+            onclick="return false;"/>
+        </div>
+        </fieldset>
+    </form>
+</body>
+</html>
+<!-- 
+submit ~ action
+- <form> 태그 안에 있는 입력상자의 데이터를 들고 페이지 이동
+
+*button
+button ~  onclick
+<inpt type="button"~~/>
+<button />
+
+*이미지
+<img src="" alt="" />
+<input type="image" src="" alt="" />
+
+
+-->
+
+<!-- 
+datalist 요소는 input 요소에 대해 미리 정의된 옵션 리스트를 명시해 주는 요소입니다.
+사용자는 텍스트를 바로 입력해도 되고, 드롭다운 메뉴에서 미리 정의한 옵션 중의 하나를 골라도 됩니다.
+
+단, input 요소의 list 속성값이 datalist 요소의 id 속성값과 반드시 일치해야 연결됩니다.
+ -->
