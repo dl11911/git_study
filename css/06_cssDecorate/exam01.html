@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menubar{
+            background-color: olive;;
+        }
+        #menubar ul{
+            margin:0;
+            padding: 0;
+            width: 570px;
+        }
+        #menubar ul li{
+            display:inline-block; /* 옆으로 한줄로 보이기*/
+            list-style:none;
+            padding: 10px 15px; /* top&bottom   left&right*/
+        }
+        #menubar ul li a{ /*글자색 바꿔주고 밑줄 없애기*/
+            color:white;
+            text-decoration:none;
+        }
+        #menubar ul li a:hover{/* 마우스를 올리면 색변경*/
+            color:violet;
+        }
+    </style>
+</head>
+<body>
+    <div id="menubar">
+        <ul>
+            <li><a href=#>Home</a></li>
+            <li><a href=#>Espresso</a></li>
+            <li><a href=#>Cappuccino</a></li>
+            <li><a href=#>Cafe Latte</a></li>
+            <li><a href=#>F.A.Q</a></li>
+        </ul>
+    </div>
+</body>
+</html>

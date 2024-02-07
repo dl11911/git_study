@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .item span { 
+             visibility: hidden; 
+            /* display: none; 영역자체가 사라짐*/
+        }
+        .item:hover span{
+            visibility: visible;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h3> 다음 빈 곳에 숨은 단어?</h3>
+    <hr>
+    <ul>
+        <li>I (<span class="item"><span>love</span></span>)you.
+        <li>CSS is Cascaing
+            (<span class="item"><span>Style</span></span>)Sheet.
+        <li>응답하라 (<span class="item"><span>1988</span></span>).
+    </ul>
+</body>
+</html>
+
+<!--
+[문제] 괄호안에 () 마우스를 올리면 답이 빨간색으로 나타나게 하시오
+=> 숨겨진 요소 위로 마우스를 올릴 수 없다.
+=> 중첩을 잡아야한다.
+-->
