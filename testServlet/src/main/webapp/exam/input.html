@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+   border-collapse: collapse;
+}
+#xDiv, #yDiv {
+   font-size: 8pt;
+   color: red;
+}
+</style>
+</head>
+<body>
+   <form name="inputForm" method="get" action="http://localhost:8080/testServlet/calc">
+      <table border="1">
+         <tr>
+            <td width="50" align="center">X</td>
+            <td>
+               <input type="text" name="x" id="x">
+               <div id="xDiv"></div>
+            </td>
+         </tr>
+         <tr>
+            <td align="center">Y</td>
+            <td><input type="text" name="y" id="y">
+               <div id="yDiv"></div>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="2" align="center">
+               <input type="button" value="계산" onclick="checkInput()">
+               <input type="reset" value="취소">
+            </td>
+         </tr>
+      </table>
+   </form>
+   
+   <script type="text/javascript">
+   function checkInput(){
+         document.getElementById("xDiv").innerHTML = ""
+         document.getElementById("yDiv").innerHTML = ""
+         
+      if(document.inputForm.x.value == "")
+         //alert("x의 값을 입력하시오")
+         document.getElementById("xDiv").innerHTML = "x의 값 입력"
+      else if(document.inputForm.y.value == "")
+         //alert("y의 값을 입력하시오")
+         document.getElementById("yDiv").innerHTML = "y의 값 입력"
+      else 
+         document.inputForm.submit();
+   }
+   </script>
+</body>
+</html>
