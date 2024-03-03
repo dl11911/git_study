@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+    <h1>창 크기 조절 이벤트 </h1>
+    <div id ="result" >
+        
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function(){
+                $('#result').html('<p>' + $(window).width() + ' x ' + $(window).height() + '</p>');
+            });
+        });
+
+    </script>
+</body>
+</html>

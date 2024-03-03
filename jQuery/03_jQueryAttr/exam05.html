@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+    padding: 0;
+    margin: 0;
+    width: 670px;
+    list-style: none;
+  }
+     li {
+    float: left;
+  }
+     ul:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+  }
+      img {
+    border: none;
+  }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <a href="#"><img src="../image/jquery.jpg" alt="jQuery"></a>
+    </li>
+    <li>
+      <a href="#"><img src="../image/javascript.jpg" alt="Javascript"></a>
+    </li>
+    <li>
+      <a href="#"><img src="../image/css.jpg" alt="CSS"></a>
+    </li>
+    <li>
+      <a href="#"><img src="../image/html.jpg" alt="HTML"></a>
+    </li>
+
+  </ul>
+  <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function(){
+      $('img[alt="jQuery"]').hover(function(){
+        $(this).attr('src', '../image/jquery_on.jpg');
+      }, function(){
+        $(this).attr('src', '../image/jquery.jpg');
+      })
+    })
+    $(function(){
+      $('img[alt="Javascript"]').hover(function(){
+        $(this).attr('src', '../image/javascript_on.jpg');
+      }, function(){
+        $(this).attr('src', '../image/javascript.jpg');
+      })
+    })
+    $(function(){
+      $('img[alt="CSS"]').hover(function(){
+        $(this).attr('src', '../image/css_on.jpg');
+      }, function(){
+        $(this).attr('src', '../image/css.jpg');
+      })
+    })
+    $(function(){
+      $('img[alt="HTML"]').hover(function(){
+        $(this).attr('src', '../image/html_on.jpg');
+      }, function(){
+        $(this).attr('src', '../image/html.jpg');
+      })
+    })
+  </script>
+</body>
+</html>

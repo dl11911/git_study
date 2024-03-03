@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+    <h1>클릭 이벤트 확인하기</h1>
+    <div id="input">
+        Click or Double Click Here~!!
+    </div>
+    <h2>결과</h2>
+    <div id="result"></div>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('#input').click(function(){
+                $('#result').html('Click Event')
+            });
+            $('#input').dblclick(function(){
+                $('#result').html('Double Click Event')
+            });
+        });
+    </script>
+</body>
+</html>

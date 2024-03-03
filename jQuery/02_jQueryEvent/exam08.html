@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+    <h1>focus/blur 이벤트 확인하기</h1>
+    <div id ="input" >
+        <input type="text"/>
+    </div>
+    <h2>결과</h2>
+    <div id="result"></div>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('#input > input[type="text"]').focus();
+            //무조건 포커스 맞추고 들어가기
+            
+            $('#input > input[type="text"]').focus(function(){
+                $('#result').html('포커스가 들어갔습니다.');
+            });
+
+            $('#input > input[type="text"]').blur(function(){
+                $('#result').html('포커스가 나갔습니다.');
+            });
+        });
+
+    </script>
+</body>
+</html>

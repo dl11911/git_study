@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <h1 class="title">$.ajax()함수를 사용한 HTML 읽기</h1>
+    <div class="exec">
+        <input type="button" value="txt파일 가져오기" id="mybtn"/>
+    </div>
+    <div class="console" id="result"></div>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('#mybtn').click(function(){
+                $.ajax({
+                    type:'get',
+                    url:'../text/text02.txt',
+                    dataType:'text',
+                    success:function(data){
+                        // $('#result').text(data);//inner Text
+                        // $('#result').html(data); //inner HTML
+                        $('#result').append(data);//append = 추가하기
+                    },
+                    error:function(event){
+                        console.log(event)
+                    }
+
+                });
+            });
+        })
+    </script>
+</body>
+</html>

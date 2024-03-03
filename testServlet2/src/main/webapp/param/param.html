@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table{
+border-collapse:collapase;
+}
+#nameDiv,#ageDiv{
+	font-size:8px;
+	font-weight:bold;
+	color:red;
+}
+</style>
+</head>
+<body>
+	<form name="paramForm" method="get" action="http://localhost:8080/testServlet2/ParamServlet" >
+		<table border="1" cellpadding="5">
+			<tr>
+			<td width="70" align="center">이름</td>
+				<td><input type="text" name ="name" id="name" >
+				<div id="nameDiv"></div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="50" align="center">나이</td>
+				<td>
+				<input type="text" name = "age" id="age" size="7" >
+				<div id="ageDiv"></div>
+				</td>
+				</tr>
+				
+			<tr>
+			<td colspan="2" align="center">
+			<input type ="button" value= "SEND" onclick="javascript:checkInput()">
+			<input type="reset" value="CANCEL">
+			</td>
+			</tr>
+		</table>
+	</form>
+	
+	<script type="text/javascript">
+	function checkInput(){
+		document.getElementById("nameDiv").innerHTML = "";
+		document.getElementById("ageDiv").innerHTML = "";
+		
+		if(document.paramForm.name.value=="")
+			document.getElementById("nameDiv").innerHTML = "이름을 입력하세요"
+		else if(document.paramForm.name.value=="")
+				document.getElementById("ageDiv").innerHTML = "나이을 입력하세요"
+		else
+			document.paramForm.submit();
+	}
+	</script>
+</body>
+</html>

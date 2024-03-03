@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.mainnav{
+	background-color: #483D8B;
+	list-style: none;
+	color: #ffffff;
+}
+
+.mainnav:after{ /*container-snb,content  바로 붙지 않게 하기 위해서 clear 함 */
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.mainnav li{
+	display: inline-block;
+	justify-content: space-between;
+}
+
+.mainnav li a {
+	display: block;
+	padding: 0 13px; /*  위아래, 좌우 */
+	background-color: #483D8B;
+	color: #ffffff;
+	font: bold 16px/40px 'Nanum Gothic', sans-serif; 
+		
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.mainnav li a:hover {
+	color: #660000;
+	background-color: #ffcc00;
+}

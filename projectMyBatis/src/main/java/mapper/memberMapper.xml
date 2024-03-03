@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberSQL">
+    <resultMap type="member.bean.MemberDTO" id="memberResult">
+        <result column="NAME" property="name"/>
+        <result column="ID" property="id"/>
+        <result column="PWD" property="pwd"/>
+    </resultMap>
+
+    <insert id="write" parameterType="member">
+       insert into member(name, id, pwd, gender, email1, email2, tel1, tel2, tel3, zipcode, addr1, addr2)
+    values(#{name},#{id},#{pwd},#{gender},#{email1},#{email2},#{tel1},#{tel2},#{tel3},#{zipcode},#{addr1},#{addr2})
+    </insert>
+
+    <select id="isExistId" parameterType="string" resultType="int">
+         select count(*) from member where id = #{id}
+    </select>
+
+    <select id="login" parameterType="map" resultMap="memberResult">
+        select * from member where id = #{id} and pwd = #{pwd}
+    </select>
+
+    <select id="getMemberById" parameterType="string" resultMap="memberResult">
+        select * from member where id = #{id}
+    </select>
+
+    <update id="updateMember" parameterType="member">
+        update member set name=#{name}, pwd=#{pwd} WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        delete from member where id = #{id}
+    </delete>
+</mapper>

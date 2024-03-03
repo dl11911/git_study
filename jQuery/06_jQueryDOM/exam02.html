@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+	width: 400px;
+	height: 300px;
+	padding-top: 20px;
+	background-size: 100% 100%;
+}
+ul {
+	padding: 10px 20px;
+	background-color: rgba(255, 255, 255, 0.6)
+}
+    </style>
+</head>
+<body>
+    <div >
+    <ul id="menu">
+        <li class="item">
+            <a href="#">../image/1.jpg</a>
+        </li>
+
+        <li class="item">
+            <a href="#">../image/2.jpg</a>
+        </li>
+
+        <li class="item">
+            <a href="#">../image/3.jpg</a>
+        </li>
+    </ul>
+</div>
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('.item > a').click(function(){
+                var index = $(this).parent().index();
+                console.log('index= ' + index);
+
+                var image = ['../image/1.jpg','../image/2.jpg','../image/3.jpg'];
+                $(this).parents('div').css({
+                    'background-image':'url('+ image[index] +')'
+                });
+            });
+    	});
+    </script>
+    
+</body>
+</html>

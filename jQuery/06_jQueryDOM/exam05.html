@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="추가" />
+    <input type="button" value="삭제" />
+
+    <!-- 동적 요소 -->
+    <ul>
+
+    </ul>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            var i=1;
+
+            $('input:eq(0)').click(function(){
+                var li1 = $('<li>').css('color', 'red').html('추가 항목' + (i++));
+                var li2 = $('<li>').css('color', 'green').html('추가 항목' + (i++));
+                var li3 = $('<li>').css('color', 'blue').html('추가 항목' + (i++));
+
+                    $('ul').append(li1);
+                    $('ul').append(li2);
+                    $(li3).appendTo($('ul'));
+            });
+
+            $('input:eq(1)').click(function(){
+                $('ul').empty();
+                i=1;
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!--
+    A.append(B) => A에 B 항목 추가
+    B.appendTo(A) => B 항목을 A에 추가한다
+-->

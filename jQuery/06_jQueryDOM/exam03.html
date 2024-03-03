@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul.menu li {
+	float: left;
+	width: 179px;
+	height: 48px;
+	background: url("../image/btn.png");
+}
+ul.menu li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 48px;
+	text-align: center;
+	font-weight: bold;
+	color: #CFDFB5;
+	text-decoration: none;
+}
+ul.menu li a:hover {
+	background: url("../image/btn_over.png");
+}
+ul.menu:after {
+	content: '';
+	display: block;
+	clear: both;
+	float: none;
+}
+
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <a href="#">메뉴A</a>
+            <ul class="sub">
+                <li>
+                    <a href="#">서브메뉴A</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴A</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴A</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">메뉴B</a>
+            <ul class="sub">
+                <li>
+                    <a href="#">서브메뉴B</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴B</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴B</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">메뉴C</a>
+            <ul class="sub">
+                <li>
+                    <a href="#">서브메뉴C</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴C</a>
+                </li>
+                <li>
+                    <a href="#">서브메뉴C</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //모든 서브메뉴 숨기기
+            $('ul.menu > li > .sub').hide();
+
+            $('ul.menu > li').hover(function(){
+                $(this).find('.sub').slideDown(300);
+
+            },function(){
+                $(this).find('.sub').slideUp(300);
+            });
+            // $('ul.menu > li').hover(function(){
+            //     $(this).find('.sub').stop(true, true).slideDown(300);
+
+
+            // },function(){
+            //     $(this).find('.sub').stop(true, true).slideUp(300);
+            // });
+    	});
+    </script>
+</body>
+</html>

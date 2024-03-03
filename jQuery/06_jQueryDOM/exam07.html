@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo2">
+        <button>add</button>
+        <ul>
+            <li>test1</li>
+            <li>test2</li>
+            <li>test3</li>
+        </ul>
+    </div>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('#demo2 li').bind('click', function(){
+                alert($(this).text());
+            });
+
+            // //비동적 처리
+            // $('#demo2 button').bind('click', function(){
+            //     $('#demo2 ul').append('<li>added</li>')
+            // });
+
+            //동적 처리
+            $('#demo2 button').bind('click', function(){
+                $('#demo2 li').unbind('click');
+                $('#demo2 ul').append('<li>added</li>').find($('li')).click(function(){
+                    alert($(this).text());
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
+
+<!--
+    bind가 deprecated 되었으므로 비추천, bind를 대신해서 on으로 사용한다.
+    bind로 연결된 이벤트는 unbind()로 제거하고, on으로 연결된 이벤트는 off()로 제거한다.
+-->

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello"></h1>
+    
+    <!-- <script src="../jquery-3.7.1.min.js"></script> -->
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        function hello(){
+            var h1 = document.getElementById('hello')
+            alert(h1.tagName)
+
+            h1.innerHTML = 'Hello jQuery';
+        }
+
+        //Java Script
+        /*window.onload = function(){
+            hello();
+        }
+        */
+
+        //JavaScript의 onload 이벤트와 같은 효과
+        jQuery(hello);
+    </script>
+</body>
+</html>
+
+<!--
+* jQuery
+- 전 세계에서 가장 많이 사용되는 JavaScript 라이브러리
+- HTML 요소 제어
+  => HTML 요소를 손쉽게 획득하고 제어할 수 있다.
+- 손쉬운 이벤트 처리
+  => 단 한번의 이벤트 정의로 크로스 브라우징 해결
+- 요소의 탐색과 생성
+  => DOM 요소를 제어하기 위한 간결한 기능 제공
+- Ajax 통신처리
+  => 페이지 이동이 없는 비동기 데이터 통신
+
+* jQuery 특징
+- 크로스 브라우징
+  => 한 번의 코딩으로 거의 모든 브라우저에게 적용된다.
+- 간결한 문법
+  => HTML 태그 (element)를 제어하거나 이벤트를 처리하는 부분 등 Javascript의 전반에 걸쳐서
+     구문이 짧아지기 때문에 개발 효율성이 높아진다.
+- 익숙한 구문
+  => CSS에서 사용하던 속성과 값을 그대로 Javascript 구문에 적용할 수 있어서 
+     document 내장 객체가 제공하는 기능을 쉽게 사용할 수 있다.
+- 다양한 플러그인
+  => jQuery를 기반으로 하는 수많은 플러그인들이 무료로 배포되고 있기 때문에, 
+     갤러리, 메뉴 등의 구현에 대한 작업이 많이 단축된다.
+
+* jQuery 개발 환경
+1. jQuery 라이브러리
+  - 사이트 : https://www.jquery.com
+
+2. jQuery 참조하기 
+① js 파일을 다운 받아서 사용
+<script type="text/javascript" src="js/jquery-3.7.0.min.js"></script>
+
+② http://code.jquery.com의 CDN 서비스를 사용
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+CDN(Contents Delivery Network) 이란?
+- 지리, 물리적으로 떨어져 있는 사용자에게 컨텐츠를 더 빠르게 제공할 수 있는 기술
+- 느린 응답속도 / 다운로딩 타임 을 극복하기 위한 기술
+
+-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/event.css">
+</head>
+<body>
+    <h1>Key 이벤트 확인하기</h1>
+    <div id ="input" >
+        <input type="text"/>
+    </div>
+    <h2>결과</h2>
+    <div id="result"></div>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            var count = 0;
+            $('#input > input[type="text"]').keypress(function(e){
+            count++;
+            $('#result').html('key count : ' + count + '개 &gt;&gt; ' + e.which);
+        });
+        });
+
+    </script>
+</body>
+</html>
+
+<!--
+    .keypress = > 대소문자 구별 (Ctrl, Shift, Alt구별x )
+-->

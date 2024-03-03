@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+<h1 class="title">$.ajax()함수를 사용한 XML 읽기</h1>
+<div class="exec">
+    <input type="button" value="XML 데이터 가져오기" id="mybtn"/>
+</div>
+<div class="console" id="result"></div>
+
+<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(function(){
+        $('#mybtn').click(function(){
+            $.ajax({
+                type:'get',
+                url:'../xml/xml02.xml',
+                dataType:'xml',
+                success:function(data){
+                	
+                    var subject = $(data).find('subject');
+                    console.log($(subject).length)//3 subject에 수
+                    console.log($(subject).children().length)//9 자식의 수
+                    
+                    subject.each(function(){ //3qjsqksqhr
+                    	var title = $(this).find('title').text();
+                        var time = $(this).find('time').text();
+                        var teacher = $(this).find('teacher').text();
+                        
+                       /*  var div = $('<div/>');
+                        var p1 = $('<p/>').html(title);
+                        var p2 = $('<p/>').html(time);
+                        var p3 = $('<p/>').html(teacher);
+
+                        div.append(p1).append(p2).append(p3);
+                        $('#result').append(div).append("<br/>"); */
+                        
+                        var div = `<div>`;
+                        div +=`<p>` + title + `</p>`;
+                        div +=`<p>` + time + `</p>`;
+                        div +=`<p>` + teacher + `</p>`;
+                        div +=`</div>`;
+                        
+                        $('#result').append(div).append("<br/>"); 
+                    }); //each 반복문 for문하고 같은거
+/*                     for (var i = 0; i < subject.length; i++) {
+                        var title = $(subject[i]).find('title').text();
+                        var time = $(subject[i]).find('time').text();
+                        var teacher = $(subject[i]).find('teacher').text();
+
+                        var div = $('<div/>');
+                        var p1 = $('<p/>').html(title);
+                        var p2 = $('<p/>').html(time);
+                        var p3 = $('<p/>').html(teacher);
+
+                        div.append(p1).append(p2).append(p3);
+                        $('#result').append(div);
+                    }//for */
+                },
+                error:function(err){
+                    console.log(err);
+                }
+            });
+        });
+    })
+</script>
+</body>
+</html>

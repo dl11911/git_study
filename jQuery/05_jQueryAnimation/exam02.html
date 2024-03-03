@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background: cyan;
+        }
+
+        .default {
+            background: initial;
+        }
+    </style>
+</head>
+<body>
+    <h1>show/hide</h1>
+    <div id="sh">
+        <input type="button" class="btn" value="보이기">
+        <input type="button" value="숨기기">
+        <input type="button" value="토글">
+        <div>
+            <img src="../image/1.jpg" width="500px" height="300px">
+        </div>
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+           
+            $('#sh>input:eq(0)').click(function(){
+                $('#sh img').show(200);
+            });
+            $('#sh>input:eq(1)').click(function(){
+                $('#sh img').hide(200);
+            });
+            $('#sh>input:eq(2)').click(function(){
+                $('#sh img').toggle(200);
+            });
+            $('#sh > input').click(function(){
+                //클릭한 버튼을 제외한 모든 버튼에서 class="btn" 속성을 제거
+                $('#sh >input').not(this).removeClass('btn');
+
+                //클릭한 버튼에 class="btn" 속성 부여
+                $(this).addClass('btn');
+            });
+        });
+    </script>   
+</body>
+</html>

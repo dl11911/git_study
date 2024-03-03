@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <h1 class="title">아이디 중복검사</h1>
+    <div class="exec">
+        <form>
+            <input type="text" name="user_id" /> <input type="button"
+                id="checkId" value="중복 검사" />
+        </form>
+    </div>
+    <div class="console"></div>
+
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#checkId').click(function() {
+                var user_id = $('input[name = "user_id"]').val();
+                if (!user_id) {
+                    alert("아이디를 입력하세요.");
+                    $('input[name = "user_id"]').focus();
+                    return false;
+                }
+
+                $.get('../checkId/checkId.jsp', {
+                    'user_id' : user_id
+                }, function(data) {
+                    console.log(data);
+
+                    var result_text = $(data).find('result').text();
+
+                    //"true" => true 변화 , 문자열 => boolean 변환
+                    var result = eval(result_text);
+                    if(result){
+                        $('.console').html('<span style="color: red;">이미 사용 중 입니다.</span>');
+                    }else{
+                        $('.console').html('<span style="color: blue;">사용 가능한 아이디 입니다.</span>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
